@@ -74,7 +74,7 @@ class OnvifCam():
       try:
          result = tmpl.format(**parms)
       except KeyError as exc:
-         logger.error("not making Onvif {command}: missing parameter: {exc.args[0]}")
+         logger.error(f"not making Onvif {command}: missing parameter: {exc.args[0]}")
       else:
          response = self.sendSoapMsg(result)
          return response
